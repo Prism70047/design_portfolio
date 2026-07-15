@@ -1172,13 +1172,16 @@ a {
     opacity: 0;
     visibility: hidden;
     transition:
-      opacity 0.5s ease,
-      visibility 0.5s;
+      opacity 0.2s ease,
+      visibility 0.2s ease;
   }
 
   .nav-links.active {
     opacity: 1;
     visibility: visible;
+    transition:
+      opacity 0.5s ease,
+      visibility 0.5s;
   }
 
   .nav-links.active .nav-item {
