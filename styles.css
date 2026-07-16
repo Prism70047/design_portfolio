@@ -481,7 +481,7 @@ a {
 
 /* Portfolio Card */
 .portfolio-card {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   border: 1px solid rgba(200, 212, 218, 0.3);
   border-radius: 0;
   overflow: hidden;
@@ -505,7 +505,7 @@ a {
 .card-image-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 75%;
+  padding-top: 100%;
   overflow: hidden;
   background-color: var(--bg-warm);
 }
@@ -517,6 +517,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -552,7 +553,6 @@ a {
 
 .card-info {
   padding: 24px 28px;
-  background-color: var(--bg-secondary);
   border-top: 1px solid rgba(200, 212, 218, 0.3);
 }
 
@@ -1250,4 +1250,12 @@ a {
     top: 20px;
     right: 20px;
   }
+}
+
+/* ==========================================================================
+   Prevent Animations During Window Resize
+   ========================================================================== */
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
 }

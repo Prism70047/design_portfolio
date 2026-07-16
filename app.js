@@ -356,6 +356,25 @@ function initApp() {
 
   // 6. Setup Lightbox Trigger Event
   setupLightbox();
+
+  // 7. Setup Window Resize CSS Transition Stopper
+  setupResizeStopper();
+}
+
+/* ==========================================================================
+   Prevent Resize Animations
+   ========================================================================== */
+function setupResizeStopper() {
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    document.body.classList.add("resize-animation-stopper");
+
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(() => {
+      document.body.classList.remove("resize-animation-stopper");
+    }, 400);
+  });
 }
 
 /* ==========================================================================
@@ -463,7 +482,7 @@ function getCategoryName(category) {
     video: "影片拍攝剪輯",
   };
 
-  // 若找不到對應鍵，則回傳預設值
+  // If category not found, default to
   return categoryMap[category] || "設計作品";
 }
 
